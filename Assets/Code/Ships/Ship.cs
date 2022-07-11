@@ -6,7 +6,8 @@ namespace Ships
     public class Ship : MonoBehaviour
     {
         [SerializeField] private float _speed;
-        [SerializeField] private Joystick _joystick; // Creo una variable que almacena el boton de la UI.    
+        private Input _input; // Creo una variable que almacena el boton de la UI.    
+        //Ahora, cambio la variable de tipo joystick, a Input.
         private Transform _myTransform;
         private Camera _camera;
 
@@ -43,12 +44,9 @@ namespace Ships
 
         private Vector2 GetDirection()
         {
+            //Aqui, le digo a input, que busque la direccion.
+           return _input.GetDirection();
 
-            return new Vector2(_joystick.Horizontal,_joystick.Vertical); // Aqui, se anulan los inputs del teclado y anda solo con la UI.
-            //Acordarse tmb de referenciar la variable de tipo joystick en el editor.
-            var horizontalDir = Input.GetAxis("Horizontal");
-            var verticalDir = Input.GetAxis("Vertical");
-            return new Vector2(horizontalDir,verticalDir);
         }
         //DESVENTAJAS:
         //No puedo jugar en PC. Tengo que ver si utilizo ifs, u optar de aplicar el patron adapter.
