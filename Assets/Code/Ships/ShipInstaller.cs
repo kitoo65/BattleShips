@@ -19,5 +19,6 @@ namespace Ships
         }
     }
 
+    //De esta manera, se setea el Input para el Joystick Solamente.
 }
 
