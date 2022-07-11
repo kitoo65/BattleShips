@@ -51,6 +51,11 @@ namespace Ships
         //DESVENTAJAS:
         //No puedo jugar en PC. Tengo que ver si utilizo ifs, u optar de aplicar el patron adapter.
 
+        public void ConfigureInput(Input input)
+        {
+            _input = input;
+        }
+
     }
 
 }

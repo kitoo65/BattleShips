@@ -5,6 +5,7 @@ namespace Ships
     public class JoystickInputAdapter : Input
     {
         private readonly Joystick _joystick;
+        //Este es el constructor.
         public JoystickInputAdapter(Joystick joystick)
         {
             _joystick = joystick;
