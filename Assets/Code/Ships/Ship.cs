@@ -44,12 +44,9 @@ namespace Ships
 
         private Vector2 GetDirection()
         {
-            //Aqui, le digo a input, que busque la direccion.
            return _input.GetDirection();
 
         }
-        //DESVENTAJAS:
-        //No puedo jugar en PC. Tengo que ver si utilizo ifs, u optar de aplicar el patron adapter.
 
         public void ConfigureInput(Input input)
         {
