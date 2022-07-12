@@ -5,6 +5,8 @@ namespace Ships
 {
     public class ShipInstaller :MonoBehaviour//Me va a configurar el Ship.
     {
+        //Para crear la IA, tengo que tener una variable que decida si usar la IA o no.
+        [SerializeField] private bool _useAI;
         [SerializeField] private bool _useJoystick;
         [SerializeField] private Joystick _joystick;
         [SerializeField] private Ship _ship;
@@ -16,6 +18,10 @@ namespace Ships
 
         private Input GetInput()
         {
+            if (_useAI)
+            {
+                return new AIInputAdapter(_ship); //Le paso la nave para testear.
+            }
             if (_useJoystick)
             {
                 return new JoystickInputAdapter(_joystick);
