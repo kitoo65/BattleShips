@@ -23,9 +23,8 @@ namespace Ships
             var finalPosition = currentPosition;
             //Comprobare la posicion X.
             var distance = Mathf.Abs(currentPosition.x = _initialPosition.x);
-            if (distance <= _maxDistance)
-            {
-                return;
+            if (distance <= _maxDistance)return;
+
                 if(currentPosition.x> _initialPosition.x) //Estamos yendo hacia la derecha.
                                                           //Le sumamos la maxima distancia.
                 {
@@ -35,8 +34,8 @@ namespace Ships
                 {
                     finalPosition.x = _initialPosition.x - _maxDistance;
                 }
-                _transform.position = finalPosition;
-            }
+                _transform.position = finalPosition; //Aplicamos este limite. 
         }
+        //Luego de determinar la posición, voy al installer, y devuelvo este tipo de estrategia.
     }
 }
