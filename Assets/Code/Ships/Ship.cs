@@ -79,6 +79,12 @@ namespace Ships
         }
 
     }
+    //Hasta acá el proyecto está funcionando a la perfección
+    //Lo que ocurrirá en un futuro, es que esta clase Ship, estará recibiendo mucho más
+    //Responsabilidad, la cuál será un problema. Será cada vez más difícil que sea independiente y que se pueda controlar.
+    //Para ello, existe un PATRÓN, que permitirá tener los comportamientos separados. 
+    //Nos ayudará a tener el comportamiento de disparo en una clase, y el comportamiento de movernos en otra clase.
+    //Lo unico que hara la clase Ship, sera la de mediar, colaborar con estas logicas externas. 
 
 }
 
