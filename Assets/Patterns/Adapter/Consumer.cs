@@ -34,8 +34,6 @@ namespace Patterns.Adapter
             var data2 = _playerPrefsAdapter.GetData<Data>("Data2");
             Debug.Log(data2.Dato1);
             Debug.Log(data2.Dato2);
-
-
         }
     }
 }

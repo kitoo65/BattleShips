@@ -1,5 +1,7 @@
 ﻿using System;
+using Input;
 using UnityEngine;
+using Ships.CheckLimits;
 
 namespace Ships
 {
@@ -9,6 +11,7 @@ namespace Ships
         [SerializeField] private bool _useAI;
         [SerializeField] private bool _useJoystick;
         [SerializeField] private Joystick _joystick;
+        [SerializeField] private JoyButton _joyButton;
         [SerializeField] private Ship _ship;
 
         private void Awake()
@@ -16,7 +19,7 @@ namespace Ships
             _ship.ConfigureInput(GetInput(),GetCheckLimitsStrategy());   
         }
 
-        private Input GetInput()
+        private Input.Input GetInput()
         {
             if (_useAI)
             {
@@ -24,14 +27,14 @@ namespace Ships
             }
             if (_useJoystick)
             {
-                return new JoystickInputAdapter(_joystick);
+                return new JoystickInputAdapter(_joystick, _joyButton);
 
             }
             Destroy(_joystick.gameObject);
             return new UnityInputAdapter();
         }
 
-        public CheckLimits GetCheckLimitsStrategy()
+        public CheckLimits.CheckLimits GetCheckLimitsStrategy()
         {
             if (_useAI)
             {

@@ -1,15 +1,18 @@
 using UnityEngine;
 using System;
+using Ships.Weapons;
+using Ships.CheckLimits;
+
 
 namespace Ships
 {
     public class Ship : MonoBehaviour
     {
         [SerializeField] private float _speed;
-        private Input _input; // Creo una variable que almacena el boton de la UI.    
+        private Input.Input _input; // Creo una variable que almacena el boton de la UI.    
         //Ahora, cambio la variable de tipo joystick, a Input.
         private Transform _myTransform;
-        private CheckLimits _checkLimits;
+        private CheckLimits.CheckLimits _checkLimits;
 
 
         private void Awake()
@@ -36,7 +39,7 @@ namespace Ships
 
         }
 
-        public void ConfigureInput(Input input, CheckLimits checkLimits)
+        public void ConfigureInput(Input.Input input, CheckLimits.CheckLimits checkLimits)
         {
             _checkLimits = checkLimits;
             _input = input;

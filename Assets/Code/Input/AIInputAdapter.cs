@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using Ships;
 
-namespace Ships
+namespace Input
 {
     public class AIInputAdapter : Input
     {
@@ -23,6 +24,12 @@ namespace Ships
                 _currentDirectionX = -1;
             }
             return new Vector2(_currentDirectionX, 0);
+        }
+
+        public bool IsFireActionPressed()
+        {
+            return Random.Range(0, 100) < 20; //Si cae menor a 20, entonces que dispare.
+            //Con esto, tengo un 20% de probabilidad de que el personaje dispare o no.
         }
     }
 
