@@ -33,6 +33,11 @@ namespace Ships
 
         public CheckLimits GetCheckLimitsStrategy()
         {
+            if (_useAI)
+            {
+                return new InitialPositionCheckLimits(_ship.transform, 10f); //Con este codigo, el player solo se puede mover 10 hacia la izq, 
+                //O 10 hacia la derecha.
+            }
             return new ViewportCheckLimits(_ship.transform, Camera.main);
         }
     }
