@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 using Input;
 using UnityEngine;
 using Ships.CheckLimits;
@@ -31,6 +32,7 @@ namespace Ships
 
             }
             Destroy(_joystick.gameObject);
+            Destroy(_joyButton.gameObject);
             return new UnityInputAdapter();
         }
 

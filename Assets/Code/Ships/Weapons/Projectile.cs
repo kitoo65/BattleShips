@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Ships.Weapons
@@ -5,6 +6,12 @@ namespace Ships.Weapons
     [RequireComponent(typeof(Rigidbody2D))]
     public class Projectile : MonoBehaviour
     {
+        [SerializeField] private Rigidbody2D _rigidbody2D;
         [SerializeField] private float _speed;
+
+        private void Start()
+        {
+            _rigidbody2D.velocity = transform.up*_speed;
+        }
     }
 }
