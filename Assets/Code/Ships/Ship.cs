@@ -9,12 +9,12 @@ namespace Ships
         private Input _input; // Creo una variable que almacena el boton de la UI.    
         //Ahora, cambio la variable de tipo joystick, a Input.
         private Transform _myTransform;
-        private Camera _camera;
+        private CheckLimits _checkLimits;
+
 
         private void Awake()
         {
             _myTransform = transform;
-            _camera = Camera.main;
         }
         private void Update()
         {
@@ -25,22 +25,10 @@ namespace Ships
         {
             _myTransform.Translate(direction * (_speed * Time.deltaTime));
             //Busco un vector2 que guarde los bordes de la camara. De 0 a 100%. 
-            ClampFinalPosition();
+            //Pongo la estrategia aca.
+            _checkLimits.ClampFinalPosition();
         }
-        //Que problemas presenta esta solucion? Funciona bien. Pero si mañana, en vez de querer movernos con el axis
-        //Queremos movernos pulsando la pantalla.... Esta solucion, no valdria porque tenemos que cambiar el GetDirection, 
-        //Para utilizar los inputs de la pantalla. 
-        //O, por ejemplo que el GetDirection lo lea una inteligencia artificial.
-        //Puedo poner ifs, para hacer la implementacion, puedo duplicar los metodos para cada input, etc.
-        //Existe un patron: Patron Adapter.
-
-        private void ClampFinalPosition()
-        {
-            var viewportPoint = _camera.WorldToViewportPoint(_myTransform.position);
-            viewportPoint.x = Math.Clamp(viewportPoint.x, 0.03f, 0.97f); // Dejo un 3% de margen.
-            viewportPoint.y = Math.Clamp(viewportPoint.y, 0.03f, 0.97f);
-            _myTransform.position = _camera.ViewportToWorldPoint(viewportPoint);
-        }
+     
 
         private Vector2 GetDirection()
         {
@@ -48,8 +36,9 @@ namespace Ships
 
         }
 
-        public void ConfigureInput(Input input)
+        public void ConfigureInput(Input input, CheckLimits checkLimits)
         {
+            _checkLimits = checkLimits;
             _input = input;
         }
 
