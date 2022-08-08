@@ -8,42 +8,27 @@ namespace Patterns.Mediator
         [SerializeField] private Wheel[] _wheels;
         [SerializeField] private VehicleLight[] _brakeLights;
 
+        private Vehicle _vehicle;
+        //Debido a que trabajo con Monobehaviour, puedo crear un metodo de configuracion
+        //Para poder comunicar este componente con el mediator.
+
+        public void Configure(Vehicle vehicle)
+        {
+            _vehicle = vehicle;
+        }
         private void Update()
         {
             if (UnityEngine.Input.GetButtonDown("Break"))
             {
-                Pressed();
+                //Cuando se pulse el freno, informo al Mediator.
+                _vehicle.BrakePressed();
             }
             else if (UnityEngine.Input.GetButtonUp("Break"))
             {
-                Release();
+                _vehicle.BrakeReleased();
             }
         }
 
-        private void Release()
-        {
-            foreach (var wheel in _wheels)
-            {
-                wheel.AddFriction();
-            }
-
-            foreach (var brakeLight in _brakeLights)
-            {
-                brakeLight.TurnOn();
-            }
-        }
-
-        private void Pressed()
-        {
-            foreach (var wheel in _wheels)
-            {
-                wheel.RemoveFriction();
-            }
-
-            foreach (var brakeLight in _brakeLights )
-            {
-                brakeLight.TurnOff();
-            }
-        }
+        
     }
 }
