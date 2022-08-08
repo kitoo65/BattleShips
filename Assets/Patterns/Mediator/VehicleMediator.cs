@@ -50,12 +50,18 @@ namespace Patterns.Mediator
 
         public void LeftPressed() //Luego de crearlas en el mediator, las tengo que implementar.
         {
-            throw new NotImplementedException();
+            foreach (var wheel in _wheels)
+            {
+                wheel.TurnLeft();
+            }
         }
 
         public void RightPressed()
         {
-            throw new NotImplementedException();
+            foreach (var wheel in _wheels)
+            {
+                wheel.TurnRight();
+            }
         }
     }
 }

@@ -20,30 +20,15 @@ namespace Patterns.Mediator
                 //Por ejemplo, si quiero dar ordenes: _vehicle.TurnLeft. Esto no tiene que suceder. Esto no seria decision del componente!
                 //El componente tiene que informar lo ocurrido. Lo que ocurrio fue que se requiere ir a la izquierda.
                 _vehicle.LeftPressed();
-                TurnLeft();
+               
             }
             else if (UnityEngine.Input.GetButtonDown("Right"))
             {
                 _vehicle.RightPressed(); //Lo mismo aqui!
-                TurnRight();
                 
             }
         }
 
-        private void TurnLeft()
-        {
-            foreach (var wheel in _wheels)
-            {
-                wheel.TurnLeft();
-            }
-        }
-        private void TurnRight()
-        {
-            foreach (var wheel in _wheels)
-            {
-                wheel.TurnRight();
-            }
-        }
 
     }
 }
