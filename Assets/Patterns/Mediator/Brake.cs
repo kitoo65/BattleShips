@@ -5,9 +5,6 @@ namespace Patterns.Mediator
 {
     public class Brake : MonoBehaviour
     {
-        [SerializeField] private Wheel[] _wheels;
-        [SerializeField] private VehicleLight[] _brakeLights;
-
         private Vehicle _vehicle;
         //Debido a que trabajo con Monobehaviour, puedo crear un metodo de configuracion
         //Para poder comunicar este componente con el mediator.
@@ -28,6 +25,7 @@ namespace Patterns.Mediator
                 _vehicle.BrakeReleased();
             }
         }
+        //Gracias a esto el freno ya no conoce los componentes. Solo el mediador. 
 
         
     }

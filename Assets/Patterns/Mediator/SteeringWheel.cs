@@ -5,10 +5,9 @@ namespace Patterns.Mediator
 {
     public class SteeringWheel :MonoBehaviour
     {
-        [SerializeField] private Wheel[] _wheels;
         private Vehicle _vehicle;
 
-        void Configure(Vehicle vehicle)
+       public void Configure(Vehicle vehicle)
         {
             _vehicle = vehicle;
         }
@@ -28,6 +27,8 @@ namespace Patterns.Mediator
                 
             }
         }
+        //Fijarse lo simple que queda el codigo de Steering Wheel, comunicandose solo con el mediador.
+        //En este igual. Solo se conoce al mediador. 
 
 
     }

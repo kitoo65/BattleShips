@@ -18,7 +18,8 @@ namespace Patterns.Mediator
         private void Awake()
         {
             _brake.Configure(this); //Aca asignamos los brakes al vehiculo.
-            
+            _steeringWheel.Configure(this); //Aca asignamos el volante. 
+
         }
 
         //Estas funciones surgen de haberlas modificado del componente Brake
@@ -50,7 +51,7 @@ namespace Patterns.Mediator
 
         public void LeftPressed() //Luego de crearlas en el mediator, las tengo que implementar.
         {
-            foreach (var wheel in _wheels)
+            foreach (var wheel in _wheels) //Lo que ocurre en el mediador, es que el mismo decide que se tienen que mover las ruedas.
             {
                 wheel.TurnLeft();
             }
