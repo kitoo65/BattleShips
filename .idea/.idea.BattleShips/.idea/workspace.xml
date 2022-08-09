@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae08d0e5-23e4-436b-97ce-85e06d7b9c95" name="Changes" comment="" />
+    <list default="true" id="ae08d0e5-23e4-436b-97ce-85e06d7b9c95" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BattleShips/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BattleShips/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Patterns/Mediator/VehicleLight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Patterns/Mediator/VehicleLight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Patterns/Mediator/VehicleMediator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Patterns/Mediator/VehicleMediator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Patterns/Mediator/Wheel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Patterns/Mediator/Wheel.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +75,7 @@
       <workItem from="1657673205725" duration="140000" />
       <workItem from="1657725659422" duration="6419000" />
       <workItem from="1657807788190" duration="1647000" />
-      <workItem from="1660001303888" duration="1031000" />
+      <workItem from="1660001303888" duration="1835000" />
     </task>
     <servers />
   </component>

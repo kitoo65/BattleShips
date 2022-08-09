@@ -4,6 +4,12 @@ namespace Patterns.Mediator
 {
     public class Wheel : MonoBehaviour
     {
+        private Vehicle _vehicle;
+
+        public void Configure(Vehicle vehicle)
+        {
+            _vehicle = vehicle;
+        }
         //Un error que puede ocurrir en esta clase, es que si luego yo quiero cambiar
         //Un comportamiento en las wheels,tooodo lo que yo esté relacionando acá en el código
         //Lo voy a tener que modificar, porque recae muchas responsabilidades en la clase wheel.

@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Patterns.Mediator
@@ -17,6 +18,14 @@ namespace Patterns.Mediator
 
         private void Awake()
         {
+            foreach (var brakeLight in _brakeLights)
+            {
+             brakeLight.Configure(this);   
+            }
+            foreach (var wheel in _wheels)
+            {
+                wheel.Configure(this);
+            }
             _brake.Configure(this); //Aca asignamos los brakes al vehiculo.
             _steeringWheel.Configure(this); //Aca asignamos el volante. 
 
